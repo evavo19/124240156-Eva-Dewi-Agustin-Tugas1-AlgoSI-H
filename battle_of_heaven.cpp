@@ -17,23 +17,23 @@ const int MAX_BATALYON = 100;
 data batalyons[MAX_BATALYON];
 int total_batalyon = 0;
 
-bool type_pasukan(const string& type)
+bool type_pasukan(string type)
 {
-    string* ptr = pasukan; // pointer ke array pasukan
-    for (int i = 0; i < MAX_PASUKAN; i++, ptr++)
+    string* ptr = pasukan; 
+    for (int i = 0; i < 3; i++)
     {
-        if (*ptr == type)
+        if (*(ptr + 1) == type)
             return true;
     }
     return false;
 }
 
-bool nama_general(const string& nama)
+bool nama_general(string nama)
 {
     data* ptr = batalyons;
-    for (int i = 0; i < total_batalyon; i++, ptr++)
+    for (int i = 0; i < total_batalyon; i++)
     {
-        if (ptr->general == nama)
+        if (batalyon[i].general == nama)
             return true;
     }
     return false;
